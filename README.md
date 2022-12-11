@@ -1,2 +1,2 @@
 # Places
-These are all of the places that interest.
+These are all of the places that are of interest.
