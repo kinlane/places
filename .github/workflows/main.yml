@@ -117,3 +117,15 @@ jobs:
             aws_region: us-east-1
             function_name: m-s-places-place-tags-tag-d
             zip_file: m-s-places-place-tags-tag-d.zip            
+      - name: /places/bookmarklet get lambda deploy zip
+        uses: kinlane/places@main
+        with:
+            args: zip -qq -r m-s-placesbookmarklet-g.zip places/bookmarklet/get/index.js node_modules
+      - name: places get lambda deploy
+        uses: appleboy/lambda-action@master
+        with:
+            aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
+            aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+            aws_region: us-east-1
+            function_name: m-s-placesbookmarklet-g
+            zip_file: m-s-placesbookmarklet-g.zip             
